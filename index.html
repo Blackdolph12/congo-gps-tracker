@@ -1,0 +1,17 @@
+<!DOCTYPE html><html><head><title>Congo GPS</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<style>body{margin:0;font-family:Arial}#map{height:70vh}.h{background:#000;color:#fff;padding:10px;text-align:center}.p{background:#ffcc00;padding:8px;text-align:center;font-weight:bold}.btn{display:block;background:#25D366;color:#fff;padding:15px;text-align:center;text-decoration:none;font-weight:bold}</style>
+</head><body>
+<div class="h">🇨🇩 CONGO GPS LIVE - Kinshasa | Lubumbashi | Kolwezi</div>
+<div class="p">Only $25/month - Essai Gratuit 1 mois</div>
+<div id="map"></div>
+<a class="btn" href="https://wa.me/27817070456?text=Bonjour,%20je%20veux%20GPS%20pour%20mon%20camion%20Congo">💬 WHATSAPP 0817070456 - CONTACTEZ MAINTENANT</a>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+var map=L.map('map').setView([-11.67,27.47],6);
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png').addTo(map);
+var t1=L.marker([-11.67,27.47]).addTo(map).bindPopup("Truck 001 Lubumbashi"),
+t2=L.marker([-4.32,15.30]).addTo(map).bindPopup("Truck 002 Kinshasa");
+setInterval(()=>{t1.setLatLng([t1.getLatLng().lat+0.01,t1.getLatLng().lng+0.01])},2000);
+</script></body></html>
